@@ -66,7 +66,8 @@ public/
 resources/views/
   components/
     layouts/
-      app.blade.php           ← Shell layout utama
+      app.blade.php           ← Shell layout utama (aplikasi)
+      auth.blade.php          ← Layout halaman auth (centered card)
     ui/
       stat-card.blade.php
       alert.blade.php
@@ -77,6 +78,8 @@ resources/views/
       confirm-dialog.blade.php
   pages/
     demo.blade.php            ← Demo semua komponen (4 tab)
+    login.blade.php           ← Halaman login
+    register.blade.php        ← Halaman registrasi
 ```
 
 ---
@@ -126,6 +129,55 @@ resources/views/
 
 </x-layouts.app>
 ```
+
+---
+
+## Penggunaan Layout Auth
+
+Layout `x-layouts.auth` dipakai untuk halaman login/register — tampilan centered card tanpa header/sidebar.
+
+```blade
+<x-layouts.auth
+  title="Masuk — Nama Aplikasi"
+  brand="Nama Aplikasi"
+  brandSub="Tagline singkat">
+
+  <div class="auth-title">Masuk ke Akun</div>
+  <div class="auth-subtitle">Deskripsi singkat</div>
+
+  <form method="POST" action="{{ route('login') }}">
+    @csrf
+    {{-- form fields --}}
+  </form>
+
+  <x-slot:footer>
+    Belum punya akun? <a href="{{ route('register') }}">Daftar</a>
+  </x-slot:footer>
+
+</x-layouts.auth>
+```
+
+**Props `x-layouts.auth`:**
+
+| Prop | Default | Keterangan |
+|---|---|---|
+| `title` | `config('app.name')` | `<title>` halaman |
+| `brand` | `config('app.name')` | Nama aplikasi di card |
+| `brandSub` | — | Tagline di bawah nama |
+| `brandIcon` | `bi-layers-fill` | Icon brand (raw HTML) |
+
+**Slots:** `$footer`, `$scripts`, `$head`
+
+**Class CSS siap pakai di dalam auth card:**
+
+| Class | Kegunaan |
+|---|---|
+| `.auth-title` | Judul form |
+| `.auth-subtitle` | Subjudul/deskripsi |
+| `.auth-error` | Kotak error merah |
+| `.form-group-auth` | Wrapper field form |
+| `.form-ctrl-wrap` | Wrapper input dengan icon |
+| `.btn-auth` | Tombol submit full-width |
 
 ---
 

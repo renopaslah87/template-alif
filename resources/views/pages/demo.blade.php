@@ -39,6 +39,28 @@
       </div>
     </div>
     <div class="menu-group">
+      <div class="menu-item">Contoh Layout</div>
+      <div class="menu-dropdown">
+        <div class="menu-dropdown-item" style="color:var(--text-muted);cursor:default;background:var(--bg-hover);">
+          <i class="bi bi-layout-tabs text-primary fs-6"></i> Multi-Tab <span style="font-size:10px;">(aktif)</span>
+        </div>
+        <a href="{{ url('/demo-simple') }}" class="menu-dropdown-item text-decoration-none" style="color:inherit;">
+          <i class="bi bi-layout-text-sidebar text-success fs-6"></i> Halaman Biasa
+        </a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <div class="menu-item">Halaman Auth</div>
+      <div class="menu-dropdown">
+        <a href="{{ route('login') }}" class="menu-dropdown-item text-decoration-none" style="color:inherit;">
+          <i class="bi bi-box-arrow-in-right text-primary fs-6"></i> Login
+        </a>
+        <a href="{{ route('register') }}" class="menu-dropdown-item text-decoration-none" style="color:inherit;">
+          <i class="bi bi-person-plus text-success fs-6"></i> Register
+        </a>
+      </div>
+    </div>
+    <div class="menu-group">
       <div class="menu-item">Bantuan</div>
       <div class="menu-dropdown">
         <div class="menu-dropdown-item"
@@ -79,6 +101,22 @@
       <div class="tree-node" onclick="App.toast('Info','Pengaturan belum tersedia.','info')">
         <i class="bi bi-gear text-muted me-2"></i><span>Pengaturan</span>
       </div>
+      <div class="sidebar-sep"></div>
+      <div class="section-title">Contoh Layout</div>
+      <div class="tree-node active" style="pointer-events:none;opacity:.65;">
+        <i class="bi bi-layout-tabs text-primary me-2"></i><span>Multi-Tab</span>
+      </div>
+      <a href="{{ url('/demo-simple') }}" class="tree-node text-decoration-none" style="color:inherit;">
+        <i class="bi bi-layout-text-sidebar text-success me-2"></i><span>Halaman Biasa</span>
+      </a>
+      <div class="sidebar-sep"></div>
+      <div class="section-title">Halaman Auth</div>
+      <a href="{{ route('login') }}" class="tree-node text-decoration-none" style="color:inherit;">
+        <i class="bi bi-box-arrow-in-right text-primary me-2"></i><span>Login</span>
+      </a>
+      <a href="{{ route('register') }}" class="tree-node text-decoration-none" style="color:inherit;">
+        <i class="bi bi-person-plus text-success me-2"></i><span>Register</span>
+      </a>
     </div>
   </x-slot:sidebar>
 

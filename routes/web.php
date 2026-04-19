@@ -14,4 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn () => view('pages.demo'));
-Route::get('/demo', fn () => view('pages.demo'));
+Route::get('/demo', fn () => view('pages.demo'))->name('demo');
+Route::get('/demo-simple', fn () => view('pages.demo-simple'))->name('demo.simple');
+
+// Auth pages (UI template only — tidak terhubung ke logic auth)
+Route::get('/login', fn () => view('pages.login'))->name('login');
+Route::get('/register', fn () => view('pages.register'))->name('register');
