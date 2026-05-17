@@ -104,6 +104,11 @@ body {
   padding: 6px; margin-top: 4px;
 }
 .menu-group:hover .menu-dropdown { display: block; }
+/* Bridge transparan untuk menutup gap 4px antara trigger dan dropdown */
+.menu-group:hover::after {
+  content: ''; position: absolute; top: 100%; left: 0; right: 0;
+  height: 8px; z-index: 9998;
+}
 .menu-dropdown-item {
   padding: 6px 12px; cursor: pointer; display: flex;
   align-items: center; gap: 10px; border-radius: 4px; transition: background 0.15s;

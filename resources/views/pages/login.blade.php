@@ -32,19 +32,19 @@
 
     {{-- Email --}}
     <div class="form-group-auth">
-      <label class="form-label" for="email">Email</label>
+      <label class="form-label" for="email">Email / Username</label>
       <div class="form-ctrl-wrap">
-        <i class="bi bi-envelope input-icon"></i>
+        <i class="bi bi-person input-icon"></i>
         <input
           id="email"
-          type="email"
+          type="text"
           name="email"
           class="form-ctrl @error('email') is-error @enderror"
           value="{{ old('email') }}"
-          placeholder="nama@domain.com"
+          placeholder="Email atau username"
           required
           autofocus
-          autocomplete="email">
+          autocomplete="username">
       </div>
     </div>
 
@@ -87,7 +87,7 @@
     </button>
   </form>
 
-  <x-slot:footer>
+  {{-- <x-slot:footer>
     @if (Route::has('register'))
       Belum punya akun? <a href="{{ route('register') }}">Daftar sekarang</a>
     @endif
@@ -96,7 +96,7 @@
         <i class="bi bi-arrow-left me-1"></i>Kembali ke Demo Template
       </a>
     </div>
-  </x-slot:footer>
+  </x-slot:footer> --}}
 
   <x-slot:scripts>
     <script>

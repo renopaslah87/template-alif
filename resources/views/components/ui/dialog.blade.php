@@ -12,7 +12,7 @@
 
   Penggunaan:
     <x-ui.dialog id="dlgTambah" title="Tambah Data" icon="bi-plus-circle" size="md">
-      {{-- body --}}
+      ... (body content) ...
       <div class="p-4"> ... </div>
 
       <x-slot:footer>
